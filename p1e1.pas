@@ -76,7 +76,10 @@ while (v[i].codigo<=pos2) and (i<=dl) do
     if (pos1<=v[i].codigo) and (v[i].codigo<=pos2)
     then
     begin
-      if (v[i].codigo=v[i+1].codigo)then
+      if (v[i].codigo=v[i+1].codigo
+      
+      
+  then
       
         v[i]:=v[i+2]
         else begin
