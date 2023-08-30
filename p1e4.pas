@@ -26,9 +26,10 @@ v_rub=array[maxprod] of productos;
 procedure leerproducto(var p:productos);
 begin
 randomize;
-  Readln(p.precio);
+p.precio:=random(10);
 if not(p.precio=0)then
 begin
+randomize;
 p.ru:=random(7);
 p.cod:=random(20)+20;
  
@@ -87,7 +88,7 @@ procedure cargar_v(l:lista;var a:v_rub; var diml:integer);
 begin
   diml:=0;
 
-  while not(l=Nil) and (31>diml) do
+  while not(l=Nil) and (31>diml) and (4>l^.dato.ru) do
     begin
       if(l^.dato.ru=r3)then
       begin
@@ -127,7 +128,7 @@ if (diml>0)then
 begin
   for i:=1  to diml do begin
     WriteLn(v[i].precio);
-        WriteLn(v[i].ru);
+       WriteLn('otro');
 
   end;
 
@@ -143,10 +144,11 @@ var l :lista; v:v_rub;diml:integer;
 begin
 l:=nil;
   cargarlista(l);
-  mostrame(l);
 cargar_v(l,v,diml);
 leerarray(v,diml);
-
+ordenarv(v,diml);
+WriteLn('ordenado');
+leerarray(v,diml);
 
 
 end.
