@@ -5,7 +5,7 @@ Program emotional;
 Type 
   dias = 1..31;
   meses = 1..12;
-  rangodehoras: 1..8;
+  rangodehoras = 1..8;
   empleados = Record
     nro: integer;
     dia: dias;
@@ -13,8 +13,8 @@ Type
     horas: rangodehoras;
   End;
 
-  lista: ^nodo;
-  nodo = Record;
+  lista = ^nodo;
+  nodo = Record
     dato: empleados;
     sig: lista;
   End;
@@ -24,7 +24,7 @@ Type
     nro : integer;
 
     arbol = ^rama;
-    rama = Record;
+    rama = Record
       dato : datos;
       hd, hi: arbol;
     End;
